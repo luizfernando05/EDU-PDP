@@ -1,5 +1,6 @@
 import express from 'express';
 import dotenv from 'dotenv';
+import { connectMongoDB } from './database/mongo';
 
 const app = express();
 
@@ -13,6 +14,12 @@ app.get('/', (req, res) => {
   res.send('Boardgame API says hello!');
 });
 
-app.listen(PORT, () => {
-  console.log(`Servidor rodando em http://localhost:${PORT}`);
-});
+async function startServer() {
+  await connectMongoDB();
+
+  app.listen(PORT, () => {
+    console.log(`Server running in http://localhost:${PORT}`);
+  });
+}
+
+startServer();
