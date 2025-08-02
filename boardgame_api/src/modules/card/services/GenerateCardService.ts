@@ -15,9 +15,10 @@ export class GenerateCardService {
   async generateCard(
     discipline: string,
     topic: string,
-    type: CardType
+    type: CardType,
+    context?: string
   ): Promise<string | undefined> {
-    const prompt = this.buildPrompt(discipline, topic, type);
+    const prompt = this.buildPrompt(discipline, topic, type, context);
 
     try {
       const response = await axios.post(
@@ -49,7 +50,8 @@ export class GenerateCardService {
   private buildPrompt(
     discipline: string,
     topic: string,
-    type: CardType
+    type: CardType,
+    context?: string
   ): string {
     const examples = {
       question: `
@@ -79,6 +81,8 @@ As cartas podem ser de três tipos:
 - Pergunta: estimula conhecimento teórico ou conceitual.
 - Desafio: propõe uma tarefa prática ou criativa.
 - Tomada de Decisão: apresenta um dilema realista e requer uma escolha argumentada.
+
+${context ? `Contexto da disciplina: ${context}\n` : ''}
 
 Aqui está um exemplo do tipo que queremos:
 
