@@ -53,34 +53,44 @@ export class GenerateCardService {
   ): string {
     const examples = {
       question: `
-Disciplina: História
-Tópico: Revolução Francesa
+Disciplina: Engenharia de Software
+Tópico: Arquitetura de Software
 Tipo: Pergunta
-Carta: Qual foi o papel da Bastilha no início da Revolução Francesa?
+Carta: Qual a principal vantagem de utilizar uma arquitetura hexagonal em aplicações corporativas modernas?
 --`,
       challenge: `
-Disciplina: Física
-Tópico: Leis de Newton
+Disciplina: Desenvolvimento de Produto
+Tópico: Prototipagem
 Tipo: Desafio
-Carta: Simule uma situação em que a 2ª Lei de Newton pode ser demonstrada usando apenas materiais escolares.
+Carta: Crie um plano de prototipagem rápida para validar a funcionalidade central de um aplicativo de saúde mental voltado a universitários.
 --`,
       decision: `
-Disciplina: Biologia
-Tópico: Mudanças Climáticas
+Disciplina: Gestão de Projetos
+Tópico: Priorização de Requisitos
 Tipo: Tomada de Decisão
-Carta: Você é um cientista em uma conferência global. Deve escolher entre implementar políticas de reflorestamento imediato ou investir em tecnologia de captura de carbono. Justifique sua escolha.
+Carta: Seu time precisa escolher entre desenvolver um recurso muito solicitado por clientes ou resolver uma dívida técnica crítica. Qual opção você prioriza e por quê?
 --`,
     };
 
     return `
-Você é um gerador de cartas para um jogo de tabuleiro educativo. Cada carta pertence a uma disciplina e aborda um tópico específico. As cartas podem ser de três tipos: Pergunta, Desafio ou Tomada de Decisão. Gere uma carta criativa e clara, seguindo o padrão dos exemplos abaixo.
+Você é um gerador de cartas para um jogo de tabuleiro voltado a estudantes universitários. Cada carta pertence a uma disciplina acadêmica e aborda um tópico relevante dessa área. As cartas devem promover reflexão crítica, aplicação prática ou tomada de decisão baseada em contexto.
+
+As cartas podem ser de três tipos:
+- Pergunta: estimula conhecimento teórico ou conceitual.
+- Desafio: propõe uma tarefa prática ou criativa.
+- Tomada de Decisão: apresenta um dilema realista e requer uma escolha argumentada.
+
+Aqui está um exemplo do tipo que queremos:
 
 ${examples[type]}
+
+Agora gere apenas UMA carta nova para o seguinte caso:
 
 Disciplina: ${discipline}
 Tópico: ${topic}
 Tipo: ${this.capitalizeType(type)}
-Carta:`;
+Carta:
+`;
   }
 
   private capitalizeType(type: CardType): string {
