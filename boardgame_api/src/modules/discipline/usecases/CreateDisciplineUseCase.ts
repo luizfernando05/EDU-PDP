@@ -1,5 +1,5 @@
 import { DisciplineModel } from '../../../domain/models/Discipline';
-import { CreateDisciplineDTO } from '../../dtos/CreateDisciplineDTO';
+import { CreateDisciplineDTO } from '../dtos/CreateDisciplineDTO';
 import { IDisciplineRepository } from '../interfaces/IDisciplineRepository';
 
 export class CreateDisciplineUseCase {
