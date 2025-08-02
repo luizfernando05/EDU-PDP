@@ -2,6 +2,7 @@ import express from 'express';
 import dotenv from 'dotenv';
 import { connectMongoDB } from './config/database/mongo';
 import disciplineRoutes from './modules/discipline/routes/discipline.routes';
+import cardRoutes from './modules/card/routes/card.route';
 
 const app = express();
 
@@ -23,6 +24,7 @@ async function startServer() {
   });
 
   app.use(disciplineRoutes);
+  app.use(cardRoutes);
 }
 
 startServer();
