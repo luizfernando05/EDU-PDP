@@ -131,367 +131,26 @@
         'Pós desenvolvimento (acompanhamento e descontinuidade)',
       ];
 
-      const cartas = {
-        'Planejamento do Projeto': {
-          pergunta: [
-            'Qual é o principal objetivo de um projeto?\n✅ Acertou: Avance 2 casas\n❌ Errou: Volte 1 casa',
-            'O que caracteriza um projeto como “temporário”?\n✅ Acertou: Avance 1 casa\n❌ Errou: Perca a próxima rodada',
-            'Qual é a função do Escritório de Projetos (PMO)?\n✅ Acertou: Avance 2 casas\n❌ Errou: Volte 1 casa',
-            'Qual é a importância da definição do escopo?\n✅ Acertou: Avance 1 casa\n❌ Errou: Fique 1 rodada sem jogar',
-            'Qual é o tipo de projeto mais inovador?\n✅ Acertou: Avance 2 casas\n❌ Errou: Volte 2 casas',
-            'O que significa um projeto incremental?\n✅ Acertou: Avance 1 casa\n❌ Errou: Volte 1 casa',
-            'Como podemos classificar os projetos quanto à inovação?\n✅ Acertou: Avance 2 casas\n❌ Errou: Perca a próxima rodada',
-            'Qual indicador mede a velocidade de desenvolvimento de um projeto?\n✅ Acertou: Avance 1 casa\n❌ Errou: Volte 1 casa',
-            'Cite uma forma de reduzir riscos no planejamento de projeto.\n✅ Acertou: Avance 1 casa\n❌ Errou: Volte 2 casas',
-            'O que deve acompanhar o ciclo de vida do produto?\n✅ Acertou: Avance 1 casa\n❌ Errou: Fique 1 rodada sem jogar',
-          ],
-          consequencia: [
-            'O escopo do projeto não foi bem definido. ➡️ Volte 2 casas',
-            'Você ignorou os riscos potenciais do projeto. ➡️ Fique 1 rodada sem jogar',
-            'Sua equipe ultrapassou o orçamento planejado. ➡️ Volte 3 casas',
-            'Você implementou um bom plano de mitigação de riscos. ➡️ Avance 2 casas',
-            'O time não seguiu o cronograma de atividades. ➡️ Volte 2 casas',
-            'Você aplicou indicadores de desempenho corretamente. ➡️ Avance 1 casa',
-            'O projeto foi entregue antes do prazo. ➡️ Avance 2 casas',
-            'O Escritório de Projetos não foi consultado. ➡️ Perca a próxima rodada',
-            'Você fez uma análise financeira durante todo o projeto. ➡️ Avance 2 casas',
-            'Seu projeto teve qualidade abaixo das especificações. ➡️ Volte 1 casa',
-          ],
-          decisao: [
-            'Seu cliente exige mudanças no escopo na metade do projeto. O que você faz?\n❌ Aceita sem analisar impactos → Volte 2 casas\n✅ Reavalia com a equipe e renegocia → Avance 1 casa',
-            'O prazo está apertado. Você reduz testes para adiantar a entrega?\n❌ Sim → Qualidade comprometida: Volte 3 casas\n✅ Não → Mantém qualidade: Fique 1 rodada sem jogar, mas avance 2 casas depois',
-            'Surge um risco não mapeado. Qual sua resposta?\n❌ Ignora por falta de tempo → Volte 2 casas\n✅ Adiciona ação corretiva ao plano → Avance 1 casa',
-            'Um membro da equipe propõe automatizar uma tarefa. Você aprova?\n✅ Sim → Eficiência aumenta: Avance 2 casas\n❌ Não → Equipe desmotivada: Fique 1 rodada sem jogar',
-            'O projeto está atrasado. Você corta etapas?\n❌ Sim → Compromete escopo: Volte 2 casas\n✅ Não → Negocia novo prazo: Avance 1 casa',
-            'Você decide se vai seguir um modelo de projeto incremental ou radical.\n✅ Incremental → Baixo risco: Avance 1 casa\n❌ Radical sem estrutura → Volte 3 casas',
-            'Falta dinheiro no orçamento. Você reduz a qualidade?\n❌ Sim → Produto rejeitado: Volte 3 casas\n✅ Não → Redefine escopo com cliente: Avance 1 casa',
-            'Você quer reduzir riscos. Qual ação prioriza?\n✅ Eliminar fonte do risco → Avance 2 casas\n❌ Só monitora sem ação → Volte 2 casas',
-            'Um stakeholder externo quer interferir no cronograma. Você permite?\n❌ Sim → Confusão no projeto: Perca uma rodada\n✅ Não → Reforça governança: Avance 1 casa',
-            'Você pode usar o Escritório de Projetos para apoio. Usa?\n✅ Sim → Suporte eficiente: Avance 2 casas\n❌ Não → Gestão desorganizada: Volte 2 casas',
-          ],
-          desafio: [
-            'Liste 3 tipos de projetos segundo o nível de inovação.\n✅ Acertou: Avance 2 casas | ❌ Errou: Volte 1 casa',
-            'Explique brevemente o que é “escopo do projeto”.\n✅ Acertou: Avance 1 casa | ❌ Errou: Fique 1 rodada sem jogar',
-            'Cite 2 ações para lidar com riscos no projeto.\n✅ Acertou: Avance 2 casas | ❌ Errou: Volte 1 casa',
-            'Descreva o papel do Escritório de Projetos.\n✅ Acertou: Avance 1 casa | ❌ Errou: Fique 1 rodada sem jogar',
-            'Liste 2 indicadores de desempenho de projetos.\n✅ Acertou: Avance 1 casa | ❌ Errou: Volte 1 casa',
-            'Dê um exemplo de projeto incremental.\n✅ Acertou: Avance 1 casa | ❌ Errou: Fique 1 rodada sem jogar',
-            'Explique “time-to-market”.\n✅ Acertou: Avance 2 casas | ❌ Errou: Volte 2 casas',
-            'O que acontece se um projeto não tiver escopo claro?\n✅ Acertou: Avance 1 casa | ❌ Errou: Volte 2 casas',
-            'Dê um exemplo de ação para eliminar um risco.\n✅ Acertou: Avance 2 casas | ❌ Errou: Volte 1 casa',
-            'Explique o impacto de decisões sem planejamento.\n✅ Acertou: Avance 1 casa | ❌ Errou: Fique 1 rodada sem jogar',
-          ],
-        },
-        'Projeto Informacional': {
-          pergunta: [
-            'O que é um requisito funcional?\n✅ Acertou: Avance 1 casa | ❌ Errou: Volte 1 casa',
-            'O que é um requisito não funcional?\n✅ Acertou: Avance 2 casas | ❌ Errou: Fique 1 rodada sem jogar',
-            'Qual o objetivo do Projeto Informacional?\n✅ Acertou: Avance 1 casa | ❌ Errou: Volte 2 casas',
-            'O que são especificações-meta?\n✅ Acertou: Avance 2 casas | ❌ Errou: Perca a próxima rodada',
-            'Cite uma ferramenta usada para identificar requisitos dos clientes.\n✅ Acertou: Avance 1 casa | ❌ Errou: Volte 1 casa',
-            'O que representa a árvore da qualidade demandada?\n✅ Acertou: Avance 2 casas | ❌ Errou: Volte 2 casas',
-            'O que o QFD permite fazer?\n✅ Acertou: Avance 1 casa | ❌ Errou: Volte 1 casa',
-            'Por que é importante valorizar os requisitos dos clientes?\n✅ Acertou: Avance 2 casas | ❌ Errou: Perca a próxima rodada',
-            'Qual a diferença entre “sabor agradável” e “ter sabor provolone”?\n✅ Acertou: Avance 1 casa | ❌ Errou: Fique 1 rodada sem jogar',
-            'Qual é uma das etapas finais do Projeto Informacional?\n✅ Acertou: Avance 1 casa | ❌ Errou: Volte 1 casa',
-          ],
-          consequencia: [
-            'Você ignorou requisitos não-funcionais. ➡️ Volte 2 casas',
-            'Sua equipe definiu bem as especificações-meta. ➡️ Avance 2 casas',
-            'Você confundiu demandas dos clientes com soluções de projeto. ➡️ Volte 1 casa',
-            'Aplicou corretamente o QFD. ➡️ Avance 2 casas',
-            'Não realizou entrevista com usuários finais. ➡️ Fique 1 rodada sem jogar',
-            'A árvore da qualidade foi mal elaborada. ➡️ Volte 2 casas',
-            'Você realizou benchmarking corretamente. ➡️ Avance 1 casa',
-            'Os requisitos coletados foram vagos e genéricos. ➡️ Volte 1 casa',
-            'Você coletou dados com questionários abertos e fechados. ➡️ Avance 2 casas',
-            'A priorização dos requisitos foi ignorada. ➡️ Volte 2 casas',
-          ],
-          decisao: [
-            'Você deve escolher entre questionário fechado ou entrevista aberta para coleta de dados.\n❌ Só questionário fechado → Dados limitados: Volte 1 casa\n✅ Entrevista aberta → Dados ricos: Avance 1 casa',
-            'Falta tempo. Você pula a árvore da qualidade?\n❌ Sim → Requisitos mal definidos: Volte 2 casas\n✅ Não → Processo completo: Fique 1 rodada sem jogar, mas avance 2 depois',
-            'O cliente deu sugestões técnicas. Você inclui como requisito?\n❌ Sim diretamente → Solução e não demanda: Volte 2 casas\n✅ Converte para qualidade esperada → Avance 1 casa',
-            'Você tem pouco tempo para priorizar requisitos. O que faz?\n✅ Usa matriz de Mudge → Avance 2 casas\n❌ Ignora priorização → Volte 2 casas',
-            'Seu grupo ignora as reclamações dos clientes.\n❌ Continua assim → Volte 3 casas\n✅ Transforma em qualidades positivas → Avance 1 casa',
-            'Decide coletar dados apenas com observação direta.\n❌ Resultado limitado → Fique 1 rodada sem jogar\n✅ Complementa com questionário → Avance 2 casas',
-            'Na reunião, alguém sugere usar QFD. Você aceita?\n✅ Sim → Organização clara dos requisitos: Avance 1 casa\n❌ Não → Dificuldade de priorização: Volte 1 casa',
-            'Você pode envolver clientes finais no levantamento de requisitos.\n✅ Sim → Insights relevantes: Avance 2 casas\n❌ Não → Informações incompletas: Volte 2 casas',
-            'Na definição de requisitos, você usa apenas suposições.\n❌ Erro comum → Volte 2 casas\n✅ Realiza pesquisa com usuários → Avance 1 casa',
-            'Decide agrupar requisitos semelhantes.\n✅ Ganha clareza → Avance 2 casas\n❌ Deixa tudo separado → Volte 1 casa',
-          ],
-          desafio: [
-            'Liste 2 métodos para identificar requisitos dos clientes.\n✅ Acertou: Avance 2 casas | ❌ Errou: Volte 1 casa',
-            'Explique brevemente a diferença entre requisito funcional e não funcional.\n✅ Acertou: Avance 1 casa | ❌ Errou: Fique 1 rodada sem jogar',
-            'O que é uma especificação-meta?\n✅ Acertou: Avance 2 casas | ❌ Errou: Volte 1 casa',
-            'Cite uma vantagem do uso da árvore da qualidade.\n✅ Acertou: Avance 1 casa | ❌ Errou: Volte 1 casa',
-            'Por que não se deve incluir soluções de projeto na árvore da qualidade?\n✅ Acertou: Avance 2 casas | ❌ Errou: Fique 1 rodada sem jogar',
-            'Explique o que o QFD ajuda a fazer.\n✅ Acertou: Avance 1 casa | ❌ Errou: Volte 1 casa',
-            'Dê um exemplo de requisito do cliente para um tênis de corrida.\n✅ Acertou: Avance 1 casa | ❌ Errou: Volte 1 casa',
-            'Explique o que é benchmarking.\n✅ Acertou: Avance 2 casas | ❌ Errou: Fique 1 rodada sem jogar',
-            'Cite uma ferramenta para priorizar requisitos.\n✅ Acertou: Avance 1 casa | ❌ Errou: Volte 1 casa',
-            'Explique a importância de valorizar os requisitos do cliente.\n✅ Acertou: Avance 1 casa | ❌ Errou: Fique 1 rodada sem jogar',
-          ],
-        },
-
-        'Projeto Conceitual': {
-          pergunta: [
-            'Qual é o objetivo principal do Projeto Conceitual?\n✅ Acertou: Avance 2 casas | ❌ Errou: Volte 1 casa',
-            'O que significa modelar funcionalmente um produto?\n✅ Acertou: Avance 1 casa | ❌ Errou: Fique 1 rodada sem jogar',
-            'O que compõe a arquitetura do produto no projeto conceitual?\n✅ Acertou: Avance 2 casas | ❌ Errou: Volte 2 casas',
-            'Qual método é usado para combinar funções e soluções no projeto conceitual?\n✅ Acertou: Avance 1 casa | ❌ Errou: Volte 1 casa',
-            'Para que serve a Matriz Pugh?\n✅ Acertou: Avance 2 casas | ❌ Errou: Perca a próxima rodada',
-            'O que deve conter uma função do produto?\n✅ Acertou: Avance 1 casa | ❌ Errou: Volte 1 casa',
-            'Como são chamadas as soluções propostas para cada função?\n✅ Acertou: Avance 2 casas | ❌ Errou: Fique 1 rodada sem jogar',
-            'Quais são as três principais categorias de função técnica?\n✅ Acertou: Avance 1 casa | ❌ Errou: Volte 2 casas',
-            'O que é um SSC no projeto conceitual?\n✅ Acertou: Avance 1 casa | ❌ Errou: Fique 1 rodada sem jogar',
-            'Quando é definida a forma física inicial do produto?\n✅ Acertou: Avance 2 casas | ❌ Errou: Volte 2 casas',
-          ],
-          consequencia: [
-            'Você ignorou funções ergonômicas ao definir as funções do produto. ➡️ Volte 2 casas',
-            'Sua equipe utilizou brainstorming para gerar soluções. ➡️ Avance 2 casas',
-            'As especificações-meta estavam incompletas. ➡️ Fique 1 rodada sem jogar',
-            'Você aplicou corretamente o método morfológico. ➡️ Avance 2 casas',
-            'A função global do produto foi mal definida. ➡️ Volte 2 casas',
-            'Sua concepção foi selecionada com base na Matriz Pugh. ➡️ Avance 1 casa',
-            'Você não considerou fluxo de energia e material ao modelar. ➡️ Volte 2 casas',
-            'Sua arquitetura integrou bem as soluções. ➡️ Avance 2 casas',
-            'A equipe não desenvolveu alternativas suficientes. ➡️ Volte 1 casa',
-            'As soluções foram muito abstratas e pouco viáveis. ➡️ Fique 1 rodada sem jogar',
-          ],
-          decisao: [
-            'Você tem pouco tempo. Pula a modelagem funcional?\n❌ Sim → Estrutura mal definida: Volte 2 casas\n✅ Não → Produto coerente: Avance 1 casa',
-            'Surge uma solução interessante, mas fora das especificações. Adota?\n✅ Sim com análise → Avance 1 casa\n❌ Sim sem analisar → Volte 2 casas',
-            'Sua equipe está dividida entre duas concepções. O que faz?\n✅ Usa Matriz Pugh → Avance 2 casas\n❌ Decide por votação → Volte 1 casa',
-            'Inclui uma solução com tecnologia cara, mas inovadora?\n✅ Sim com avaliação de viabilidade → Avance 1 casa\n❌ Sim sem avaliação → Volte 3 casas',
-            'Você foca só em estética, ignorando funcionalidade.\n❌ Continua assim → Volte 2 casas\n✅ Reavalia com foco técnico → Avance 1 casa',
-            'Você pode usar um banco de dados de soluções. Usa?\n✅ Sim → Economia de tempo e qualidade: Avance 2 casas\n❌ Não → Retrabalho: Fique 1 rodada sem jogar',
-            'Na hora de combinar funções, usa método aleatório.\n❌ Resultado fraco → Volte 1 casa\n✅ Usa método morfológico → Avance 2 casas',
-            'Usa TRIZ para gerar novas ideias.\n✅ Sim → Soluções criativas: Avance 1 casa\n❌ Não → Faltam alternativas: Volte 2 casas',
-            'Prioriza funções sem pensar nos fluxos principais.\n❌ Erro conceitual → Volte 2 casas\n✅ Reorganiza modelo → Avance 1 casa',
-            'Define SSCs logo no início, antes das funções.\n❌ Ordem errada → Volte 1 casa\n✅ Espera definição funcional → Avance 1 casa',
-          ],
-          desafio: [
-            'Explique o que é função global.\n✅ Acertou: Avance 2 casas | ❌ Errou: Volte 1 casa',
-            'Dê um exemplo de “verbo + substantivo” para uma função.\n✅ Acertou: Avance 1 casa | ❌ Errou: Volte 1 casa',
-            'Liste 3 métodos de criatividade usados no projeto conceitual.\n✅ Acertou: Avance 2 casas | ❌ Errou: Fique 1 rodada sem jogar',
-            'Explique o uso do método morfológico.\n✅ Acertou: Avance 2 casas | ❌ Errou: Volte 1 casa',
-            'O que a Matriz Pugh ajuda a decidir?\n✅ Acertou: Avance 1 casa | ❌ Errou: Fique 1 rodada sem jogar',
-            'Dê um exemplo de um princípio de solução para “clarear dentes”.\n✅ Acertou: Avance 1 casa | ❌ Errou: Volte 1 casa',
-            'Explique a diferença entre estrutura funcional e estrutura física.\n✅ Acertou: Avance 2 casas | ❌ Errou: Fique 1 rodada sem jogar',
-            'Cite um critério que pode ser usado na Matriz Pugh.\n✅ Acertou: Avance 1 casa | ❌ Errou: Volte 1 casa',
-            'Por que se deve transformar especificações em funções?\n✅ Acertou: Avance 2 casas | ❌ Errou: Volte 2 casas',
-            'Qual a importância de definir SSCs no final do projeto conceitual?\n✅ Acertou: Avance 1 casa | ❌ Errou: Fique 1 rodada sem jogar',
-          ],
-        },
-        'Projeto Detalhado': {
-          pergunta: [
-            'O que é definido no Projeto Detalhado?\n✅ Acertou: Avance 2 casas | ❌ Errou: Volte 1 casa',
-            'Quais são os três ciclos do Projeto Detalhado?\n✅ Acertou: Avance 1 casa | ❌ Errou: Volte 2 casas',
-            'O que representa a sigla BOM?\n✅ Acertou: Avance 1 casa | ❌ Errou: Fique 1 rodada sem jogar',
-            'O que o DFMA busca promover?\n✅ Acertou: Avance 2 casas | ❌ Errou: Volte 1 casa',
-            'Cite um dos princípios do DFMA.\n✅ Acertou: Avance 1 casa | ❌ Errou: Volte 1 casa',
-            'O que é FMEA?\n✅ Acertou: Avance 2 casas | ❌ Errou: Fique 1 rodada sem jogar',
-            'Quais são os fatores do índice de risco no FMEA?\n✅ Acertou: Avance 2 casas | ❌ Errou: Volte 2 casas',
-            'Segundo Jakob Nielsen, cite um atributo da usabilidade.\n✅ Acertou: Avance 1 casa | ❌ Errou: Volte 1 casa',
-            'Qual ferramenta visa avaliar ergonomia e conforto no produto?\n✅ Acertou: Avance 1 casa | ❌ Errou: Fique 1 rodada sem jogar',
-            'Quando o capital é liberado para a produção?\n✅ Acertou: Avance 2 casas | ❌ Errou: Volte 1 casa',
-          ],
-          consequencia: [
-            'O projeto foi aprovado sem análise FMEA. ➡️ Volte 2 casas',
-            'A BOM foi corretamente definida e aprovada. ➡️ Avance 2 casas',
-            'Você ignorou regras de DFMA. ➡️ Fique 1 rodada sem jogar',
-            'Seu produto tem ótima usabilidade. ➡️ Avance 2 casas',
-            'Foram usados componentes não padronizados. ➡️ Volte 2 casas',
-            'A análise de detecção no FMEA está incompleta. ➡️ Volte 1 casa',
-            'O projeto priorizou ergonomia. ➡️ Avance 1 casa',
-            'O índice de risco (RPN) foi alto, sem ação corretiva. ➡️ Volte 3 casas',
-            'Você otimizou o projeto com base em testes reais. ➡️ Avance 2 casas',
-            'A documentação técnica está incompleta. ➡️ Volte 1 casa',
-          ],
-          decisao: [
-            'Você pode remover um componente com pouca função.\n✅ Remove → Simplicidade aumenta: Avance 2 casas\n❌ Mantém por hábito → Volte 1 casa',
-            'Descobriu uma falha frequente no protótipo. Corrige agora?\n✅ Sim → Evita custos maiores: Avance 2 casas\n❌ Não → Problemas na produção: Volte 2 casas',
-            'Usa material mais barato, mas com menor durabilidade?\n❌ Sim → Risco de falha: Volte 3 casas\n✅ Não → Garante qualidade: Avance 1 casa',
-            'Equipes sugerem eliminar parafusos no design.\n✅ Aceita sugestão → Facilidade de montagem: Avance 2 casas\n❌ Rejeita → Dificuldade futura: Volte 1 casa',
-            'Usa o FMEA mesmo que o produto pareça seguro?\n✅ Sim → Identifica riscos ocultos: Avance 1 casa\n❌ Não → Fica vulnerável a falhas: Volte 2 casas',
-            'Reduz o número de componentes, mas dificulta manutenção.\n❌ Segue assim → Problemas com o cliente: Volte 2 casas\n✅ Revisa projeto → Equilibra manutenção e simplicidade: Avance 1 casa',
-            'Projeta com materiais padronizados ou personalizados?\n✅ Padronizados → Custo e tempo reduzidos: Avance 2 casas\n❌ Personalizados → Aumenta complexidade: Volte 2 casas',
-            'O cliente exige usabilidade máxima. Onde investir?\n✅ Facilidade de uso e eficiência → Avance 1 casa\n❌ Apenas no visual → Volte 1 casa',
-            'Utiliza ECODESIGN no detalhamento?\n✅ Sim → Sustentabilidade valorizada: Avance 2 casas\n❌ Não → Produto rejeitado por mercado verde: Volte 2 casas',
-            'Erros do passado são ignorados.\n❌ Problemas se repetem → Volte 3 casas\n✅ Consulta dados históricos → Avance 1 casa',
-          ],
-          desafio: [
-            'Explique o que é DFMA.\n✅ Acertou: Avance 2 casas | ❌ Errou: Volte 1 casa',
-            'Liste os 3 fatores do índice de risco (FMEA).\n✅ Acertou: Avance 2 casas | ❌ Errou: Volte 2 casas',
-            'Cite 2 boas práticas do DFMA.\n✅ Acertou: Avance 1 casa | ❌ Errou: Fique 1 rodada sem jogar',
-            'Descreva um exemplo de causa de falha no FMEA.\n✅ Acertou: Avance 2 casas | ❌ Errou: Volte 1 casa',
-            'Liste 3 atributos da usabilidade.\n✅ Acertou: Avance 2 casas | ❌ Errou: Fique 1 rodada sem jogar',
-            'Explique o que é o índice de detecção no FMEA.\n✅ Acertou: Avance 1 casa | ❌ Errou: Volte 1 casa',
-            'Dê um exemplo de ação para facilitar montagem (DFMA).\n✅ Acertou: Avance 2 casas | ❌ Errou: Volte 1 casa',
-            'Explique por que a BOM é essencial.\n✅ Acertou: Avance 1 casa | ❌ Errou: Fique 1 rodada sem jogar',
-            'Cite uma vantagem do uso do ECODESIGN.\n✅ Acertou: Avance 2 casas | ❌ Errou: Volte 1 casa',
-            'Explique o momento de liberar a produção.\n✅ Acertou: Avance 2 casas | ❌ Errou: Volte 1 casa',
-          ],
-        },
-
-        'Preparação da Produção': {
-          pergunta: [
-            'Qual é o objetivo principal da fase de preparação da produção?\n✅ Acertou: Avance 2 casas | ❌ Errou: Volte 1 casa',
-            'O que é um lote piloto?\n✅ Acertou: Avance 1 casa | ❌ Errou: Volte 1 casa',
-            'O que é homologar o processo?\n✅ Acertou: Avance 2 casas | ❌ Errou: Fique 1 rodada sem jogar',
-            'Quais são os tipos de manutenção que devem ser definidos?\n✅ Acertou: Avance 1 casa | ❌ Errou: Volte 1 casa',
-            'Qual a diferença entre preparação da produção e lançamento do produto?\n✅ Acertou: Avance 2 casas | ❌ Errou: Volte 2 casas',
-            'O que é capabilidade de processo?\n✅ Acertou: Avance 1 casa | ❌ Errou: Fique 1 rodada sem jogar',
-            'Qual ferramenta é usada para avaliar os instrumentos de medição?\n✅ Acertou: Avance 2 casas | ❌ Errou: Volte 1 casa',
-            'Quais recursos podem ser adquiridos para viabilizar a produção?\n✅ Acertou: Avance 1 casa | ❌ Errou: Volte 1 casa',
-            'Quando a certificação do produto pode começar?\n✅ Acertou: Avance 2 casas | ❌ Errou: Fique 1 rodada sem jogar',
-            'Quais tarefas fazem parte do treinamento de pessoal?\n✅ Acertou: Avance 1 casa | ❌ Errou: Volte 2 casas',
-          ],
-          consequencia: [
-            'Você não testou os recursos antes da produção piloto. ➡️ Volte 2 casas',
-            'Sua equipe certificou o produto com sucesso. ➡️ Avance 2 casas',
-            'O lote piloto apresentou falhas não previstas. ➡️ Volte 1 casa',
-            'Recursos foram recebidos com qualidade garantida. ➡️ Avance 1 casa',
-            'A manutenção foi mal planejada. ➡️ Fique 1 rodada sem jogar',
-            'O processo foi otimizado com sucesso. ➡️ Avance 2 casas',
-            'Não houve tempo para treinar o pessoal. ➡️ Volte 2 casas',
-            'Os equipamentos novos foram bem instalados e testados. ➡️ Avance 2 casas',
-            'A equipe ignorou análise de capabilidade. ➡️ Volte 1 casa',
-            'Problemas no layout atrasaram a produção. ➡️ Volte 2 casas',
-          ],
-          decisao: [
-            'O fornecedor parceiro oferece recursos sem necessidade de inspeção. Você aceita?\n✅ Sim → Ganha tempo: Avance 2 casas\n❌ Não → Atraso na liberação: Volte 1 casa',
-            'Você ignora o MSA na homologação.\n❌ Resultado impreciso → Volte 2 casas\n✅ Aplica corretamente → Avance 1 casa',
-            'Decide otimizar o processo sem notificar o time de engenharia.\n❌ Pode afetar especificações → Volte 3 casas\n✅ Segue protocolo de mudanças → Avance 1 casa',
-            'A fábrica precisa de novos dispositivos. Compra ou adapta?\n✅ Avalia custo-benefício antes → Avance 1 casa\n❌ Compra direto sem estudo → Volte 2 casas',
-            'Certificação não é obrigatória. Você realiza mesmo assim?\n✅ Sim → Ganha credibilidade: Avance 2 casas\n❌ Não → Mercado duvida do produto: Volte 1 casa',
-            'No planejamento do lote piloto, você ignora a programação.\n❌ Erro de coordenação → Volte 2 casas\n✅ Faz planejamento detalhado → Avance 1 casa',
-            'Recebe equipamento incompleto. O que faz?\n✅ Recusa e documenta → Avance 1 casa\n❌ Aceita mesmo assim → Volte 2 casas',
-            'Seu produto requer novo layout. Reage como?\n✅ Planeja e ajusta → Avance 2 casas\n❌ Ignora e improvisa → Fique 1 rodada sem jogar',
-            'Você identifica falhas no lote piloto. Reproduz mesmo assim?\n❌ Sim → Produto com defeitos: Volte 2 casas\n✅ Corrige antes → Avance 1 casa',
-            'Sua equipe propõe curso contínuo de capacitação.\n✅ Aprova → Profissionais atualizados: Avance 2 casas\n❌ Recusa → Falta de preparo no futuro: Volte 1 casa',
-          ],
-          desafio: [
-            'Explique o que é capabilidade de processo.\n✅ Acertou: Avance 2 casas | ❌ Errou: Volte 1 casa',
-            'Liste 3 tarefas para homologar um processo.\n✅ Acertou: Avance 1 casa | ❌ Errou: Volte 2 casas',
-            'Cite uma vantagem de fazer o lote piloto.\n✅ Acertou: Avance 2 casas | ❌ Errou: Fique 1 rodada sem jogar',
-            'Explique a diferença entre manutenção preventiva e preditiva.\n✅ Acertou: Avance 1 casa | ❌ Errou: Volte 1 casa',
-            'Cite 2 fatores que afetam o recebimento de recursos.\n✅ Acertou: Avance 2 casas | ❌ Errou: Fique 1 rodada sem jogar',
-            'Por que planejar a produção piloto com antecedência?\n✅ Acertou: Avance 2 casas | ❌ Errou: Volte 1 casa',
-            'Explique o papel da cadeia de suprimentos na preparação.\n✅ Acertou: Avance 1 casa | ❌ Errou: Volte 1 casa',
-            'O que é servitização?\n✅ Acertou: Avance 2 casas | ❌ Errou: Fique 1 rodada sem jogar',
-            'Qual o impacto da não certificação do produto?\n✅ Acertou: Avance 1 casa | ❌ Errou: Volte 2 casas',
-            'Explique a importância do treinamento na preparação da produção.\n✅ Acertou: Avance 1 casa | ❌ Errou: Fique 1 rodada sem jogar',
-          ],
-        },
-
-        'Lançamento do Produto': {
-          pergunta: [
-            'Qual é o principal objetivo da fase de lançamento do produto?\n✅ Acertou: Avance 2 casas | ❌ Errou: Volte 1 casa',
-            'Qual a diferença entre a fase de preparação da produção e a de lançamento?\n✅ Acertou: Avance 1 casa | ❌ Errou: Fique 1 rodada sem jogar',
-            'O que é BPM (Business Process Management)?\n✅ Acertou: Avance 2 casas | ❌ Errou: Volte 2 casas',
-            'Quando o evento de lançamento pode acontecer?\n✅ Acertou: Avance 1 casa | ❌ Errou: Volte 1 casa',
-            'Cite um processo desenvolvido durante o lançamento do produto.\n✅ Acertou: Avance 1 casa | ❌ Errou: Fique 1 rodada sem jogar',
-            'Quais são os objetivos do marketing de lançamento?\n✅ Acertou: Avance 2 casas | ❌ Errou: Volte 1 casa',
-            'O que acontece com o time de desenvolvimento nesta fase?\n✅ Acertou: Avance 1 casa | ❌ Errou: Volte 1 casa',
-            'Qual plano é congelado ao final da fase de lançamento?\n✅ Acertou: Avance 2 casas | ❌ Errou: Fique 1 rodada sem jogar',
-            'Quais indicadores são usados nesta fase?\n✅ Acertou: Avance 1 casa | ❌ Errou: Volte 1 casa',
-            'Por que qualificar o pessoal envolvido no lançamento é essencial?\n✅ Acertou: Avance 1 casa | ❌ Errou: Volte 1 casa',
-          ],
-          consequencia: [
-            'Você lançou o produto sem avaliar o processo de vendas. ➡️ Volte 2 casas',
-            'A equipe de marketing promoveu uma campanha de sucesso. ➡️ Avance 2 casas',
-            'O evento de lançamento foi mal planejado. ➡️ Volte 1 casa',
-            'Todos os processos de apoio foram bem desenvolvidos. ➡️ Avance 2 casas',
-            'Seu plano de fim de vida não foi atualizado. ➡️ Fique 1 rodada sem jogar',
-            'O cliente está satisfeito com o atendimento técnico. ➡️ Avance 1 casa',
-            'O time de vendas não foi treinado. ➡️ Volte 2 casas',
-            'A aceitação inicial do produto foi alta. ➡️ Avance 2 casas',
-            'Não houve integração entre marketing e distribuição. ➡️ Volte 1 casa',
-            'A campanha publicitária foi lançada com atraso. ➡️ Volte 1 casa',
-          ],
-          decisao: [
-            'Você ainda não finalizou o plano de fim de vida. Lança o produto assim mesmo?\n❌ Sim → Confusão futura: Volte 2 casas\n✅ Não → Conclui planejamento: Avance 1 casa',
-            'Seu time propõe contratar influenciadores para o marketing.\n✅ Aceita → Campanha engajante: Avance 2 casas\n❌ Recusa sem avaliar → Pouca visibilidade: Volte 1 casa',
-            'Você esqueceu de incluir suporte técnico no plano de lançamento.\n❌ Deixa assim → Reclamações: Volte 2 casas\n✅ Corrige a tempo → Avance 1 casa',
-            'Decide lançar sem validar o processo de distribuição.\n❌ Riscos logísticos → Volte 2 casas\n✅ Valida tudo → Avance 1 casa',
-            'Seu plano de vendas está incompleto.\n❌ Lança assim → Equipe desinformada: Volte 2 casas\n✅ Revisa plano → Avance 1 casa',
-            'A equipe técnica precisa de treinamento extra. Você autoriza?\n✅ Sim → Atendimento qualificado: Avance 2 casas\n❌ Não → Suporte fraco: Volte 1 casa',
-            'O cliente sinaliza dúvidas no uso do produto.\n✅ Cria material explicativo → Avance 1 casa\n❌ Ignora → Satisfação cai: Volte 2 casas',
-            'A campanha foi genérica e sem foco no público-alvo.\n❌ Mantém assim → Má recepção: Volte 2 casas\n✅ Reposiciona → Avance 1 casa',
-            'Você pode lançar o produto em etapas ou de uma vez só.\n✅ Etapas → Controle e adaptação: Avance 2 casas\n❌ De uma vez → Maior risco: Volte 1 casa',
-            'Contratar equipe externa para marketing ou usar a interna?\n✅ Avalia custo/benefício e decide estrategicamente → Avance 1 casa\n❌ Escolhe sem planejamento → Volte 1 casa',
-          ],
-          desafio: [
-            'Explique brevemente o que é BPM.\n✅ Acertou: Avance 2 casas | ❌ Errou: Volte 1 casa',
-            'Liste 3 processos desenvolvidos no lançamento do produto.\n✅ Acertou: Avance 2 casas | ❌ Errou: Volte 1 casa',
-            'Explique por que o plano de fim de vida é importante.\n✅ Acertou: Avance 1 casa | ❌ Errou: Fique 1 rodada sem jogar',
-            'Quais são os indicadores principais nesta fase?\n✅ Acertou: Avance 2 casas | ❌ Errou: Volte 1 casa',
-            'Dê um exemplo de ação de marketing de lançamento.\n✅ Acertou: Avance 1 casa | ❌ Errou: Volte 1 casa',
-            'O que acontece com o time de desenvolvimento após o lançamento?\n✅ Acertou: Avance 1 casa | ❌ Errou: Fique 1 rodada sem jogar',
-            'Por que integrar vendas e distribuição é essencial?\n✅ Acertou: Avance 2 casas | ❌ Errou: Volte 2 casas',
-            'Explique o que é "aceitação inicial" do produto.\n✅ Acertou: Avance 1 casa | ❌ Errou: Volte 1 casa',
-            'Quais ações garantem satisfação do cliente no lançamento?\n✅ Acertou: Avance 2 casas | ❌ Errou: Volte 1 casa',
-            'Liste 3 tarefas do evento de lançamento.\n✅ Acertou: Avance 2 casas | ❌ Errou: Volte 1 casa',
-          ],
-        },
-
-        'Pós desenvolvimento (acompanhamento e descontinuidade)': {
-          pergunta: [
-            'Qual o principal objetivo da fase de pós-desenvolvimento?\n✅ Acertou: Avance 2 casas | ❌ Errou: Volte 1 casa',
-            'Quais são as duas principais macroatividades do pós-desenvolvimento?\n✅ Acertou: Avance 1 casa | ❌ Errou: Fique 1 rodada sem jogar',
-            'O que é auditoria pós-projeto?\n✅ Acertou: Avance 2 casas | ❌ Errou: Volte 1 casa',
-            'Cite uma atividade envolvida na avaliação da satisfação do cliente.\n✅ Acertou: Avance 1 casa | ❌ Errou: Volte 1 casa',
-            'O que deve ser monitorado no desempenho do produto?\n✅ Acertou: Avance 2 casas | ❌ Errou: Fique 1 rodada sem jogar',
-            'Por que o tratamento de informações é fundamental nessa fase?\n✅ Acertou: Avance 1 casa | ❌ Errou: Volte 1 casa',
-            'O que é a descontinuidade da produção?\n✅ Acertou: Avance 1 casa | ❌ Errou: Volte 1 casa',
-            'Como o ecodesign se relaciona ao pós-desenvolvimento?\n✅ Acertou: Avance 2 casas | ❌ Errou: Volte 2 casas',
-            'Quando ocorre o encerramento formal do projeto?\n✅ Acertou: Avance 2 casas | ❌ Errou: Fique 1 rodada sem jogar',
-            'Qual a última atividade do pós-desenvolvimento?\n✅ Acertou: Avance 1 casa | ❌ Errou: Volte 1 casa',
-          ],
-          consequencia: [
-            'A empresa ignorou a análise da satisfação dos clientes. ➡️ Volte 2 casas',
-            'O produto teve excelente desempenho técnico e ambiental. ➡️ Avance 2 casas',
-            'A auditoria pós-projeto foi bem executada. ➡️ Avance 1 casa',
-            'O plano de descontinuidade não considerou o impacto ambiental. ➡️ Volte 1 casa',
-            'A empresa não armazenou as lições aprendidas. ➡️ Fique 1 rodada sem jogar',
-            'A equipe consolidou bem as informações do mercado. ➡️ Avance 2 casas',
-            'A assistência técnica foi mantida por tempo superior ao previsto. ➡️ Avance 1 casa',
-            'Nenhuma peça de reposição foi planejada. ➡️ Volte 2 casas',
-            'A devolução de produtos foi feita conforme o plano. ➡️ Avance 2 casas',
-            'A reunião de encerramento foi cancelada. ➡️ Volte 1 casa',
-          ],
-          decisao: [
-            'Clientes relatam falhas no uso. Você inicia uma nova auditoria?\n✅ Sim → Aprende com os erros: Avance 2 casas\n❌ Não → Problemas se repetem: Volte 2 casas',
-            'Os dados ambientais não foram monitorados. O que faz?\n✅ Atualiza plano e coleta dados → Avance 1 casa\n❌ Ignora → Pode gerar multas: Volte 2 casas',
-            'Um concorrente lança produto superior. Você acompanha os efeitos no seu?\n✅ Sim → Reação rápida: Avance 1 casa\n❌ Não → Perde mercado: Volte 2 casas',
-            'A produção foi encerrada, mas o mercado ainda exige peças.\n✅ Produz sob demanda → Atende clientes: Avance 2 casas\n❌ Recusa produzir → Reclamações aumentam: Volte 1 casa',
-            'Você pode finalizar o projeto sem auditoria. O que decide?\n❌ Encerra sem análise → Erros se repetem: Volte 2 casas\n✅ Realiza auditoria → Garante melhoria contínua: Avance 2 casas',
-            'Clientes querem devolver produtos antigos. Você recebe?\n✅ Sim, conforme o plano → Avance 1 casa\n❌ Recusa → Problemas ambientais e de imagem: Volte 2 casas',
-            'Você recebe informações valiosas da assistência técnica. O que faz?\n✅ Registra e compartilha → Avance 2 casas\n❌ Ignora → Perde chance de melhorar: Volte 1 casa',
-            'A empresa quer cortar recursos da fase de descontinuidade.\n✅ Negocia manutenção mínima → Avance 1 casa\n❌ Corta tudo → Riscos ao cliente: Volte 2 casas',
-            'Quer encerrar a produção, mas ainda há estoque nos revendedores.\n✅ Acompanha até esgotar → Avance 1 casa\n❌ Ignora → Desalinhamento logístico: Volte 1 casa',
-            'A fase está para terminar. Você realiza reunião final?\n✅ Sim → Equipe alinhada: Avance 2 casas\n❌ Não → Desinformação e retrabalho: Volte 1 casa',
-          ],
-          desafio: [
-            'Explique o que é auditoria pós-projeto.\n✅ Acertou: Avance 2 casas | ❌ Errou: Volte 1 casa',
-            'Cite 3 itens a serem monitorados no desempenho do produto.\n✅ Acertou: Avance 2 casas | ❌ Errou: Volte 1 casa',
-            'Dê um exemplo de melhoria sugerida após o pós-desenvolvimento.\n✅ Acertou: Avance 1 casa | ❌ Errou: Fique 1 rodada sem jogar',
-            'Explique por que o plano de descontinuidade é importante.\n✅ Acertou: Avance 2 casas | ❌ Errou: Volte 1 casa',
-            'Cite uma responsabilidade ambiental da empresa na devolução de produtos.\n✅ Acertou: Avance 1 casa | ❌ Errou: Fique 1 rodada sem jogar',
-            'Explique o que é Design for Environment.\n✅ Acertou: Avance 2 casas | ❌ Errou: Volte 2 casas',
-            'O que deve ser feito com as peças de reposição após a descontinuação?\n✅ Acertou: Avance 1 casa | ❌ Errou: Volte 1 casa',
-            'Descreva o papel da avaliação da satisfação do cliente.\n✅ Acertou: Avance 1 casa | ❌ Errou: Fique 1 rodada sem jogar',
-            'Por que consolidar informações é essencial nesta fase?\n✅ Acertou: Avance 2 casas | ❌ Errou: Volte 1 casa',
-            'Qual o objetivo da reunião de encerramento do projeto?\n✅ Acertou: Avance 2 casas | ❌ Errou: Volte 1 casa',
-          ],
-        },
-      };
-
       const stagesDiv = document.getElementById('stages');
       const modal = document.getElementById('modal');
       const modalTitle = document.getElementById('modalTitle');
       const cardOutput = document.getElementById('cardOutput');
+
+      const discipline = 'Projeto e Desenvolvimento do Produto';
+      const disciplineSyllabus =
+        'Visão geral do Processo de Desenvolvimento de Produtos. Ciclo de vida doproduto e análise demercado. Metodologias do desenvolvimento de produto. Tipos de projeto do produto. Objetivos,técnicas e ferramentas para o planejamento estratégico de produtos. Planejamento do projeto. Projeto informacional. Projeto conceitual .Projeto detalhado.Preparação da produção lançamento e acompanhamento doproduto no mercado. Engenharia simultânea. Relação entre PDP e inovação.';
+      const topicContexts = {
+        'Planejamento Estratégico':
+          'O Projeto Conceitual é a validação de uma idéia, ou seja, é a confirmação de que a melhor solução está sendo proposta para atender a determinado requerimento ou necessidade nas diversas áreas de uma planta industrial. É portanto a fase inicial do processo de projeto de um produto ou instalação. É através dele que são concebidas as maneiras de solução para um determinado problema ou necessidade.',
+        'Planejamento do Projeto': 'Contexto para Planejamento do Projeto',
+        'Projeto Informacional': 'Contexto para Projeto Informacional',
+        'Projeto Conceitual': 'Contexto para Projeto Conceitual',
+        'Projeto Detalhado': 'Contexto para Projeto Detalhado',
+        'Preparação da Produção': 'Contexto para Preparação da Produção',
+        'Lançamento do Produto': 'Contexto para Lançamento do Produto',
+        'Pós desenvolvimento (acompanhamento e descontinuidade)':
+          'Contexto para Pós desenvolvimento',
+      };
 
       etapas.forEach((etapa) => {
         const div = document.createElement('div');
@@ -510,20 +169,59 @@
         modal.style.display = 'block';
       }
 
-      function closeModal() {
-        modal.style.display = 'none';
+      async function showCard(tipo) {
+        cardOutput.textContent = 'Buscando carta...';
+
+        try {
+          const response = await fetch('http://localhost:3000/generate-card', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              discipline,
+              disciplineSyllabus,
+              topic: etapaSelecionada,
+              topicContext: topicContexts[etapaSelecionada] || '',
+              type: mapTipo(tipo),
+            }),
+          });
+
+          if (!response.ok) throw new Error('Erro na requisição');
+
+          const data = await response.json();
+          console.log('🔍 Resposta da API:', data);
+
+          if (data.card) {
+            if (data.card.question && data.card.answer) {
+              cardOutput.innerHTML = `
+              ${data.card.question}
+            `;
+            } else {
+              cardOutput.textContent = data.card;
+            }
+          } else {
+            cardOutput.textContent = 'Resposta inválida da API.';
+          }
+        } catch (err) {
+          console.error(err);
+          cardOutput.textContent = 'Erro ao buscar carta.';
+        }
       }
 
-      function showCard(tipo) {
-        const cartasEtapa = cartas[etapaSelecionada];
-        if (!cartasEtapa || !cartasEtapa[tipo]) {
-          cardOutput.textContent =
-            'Cartas ainda não cadastradas para esta etapa.';
-          return;
+      function mapTipo(tipoTela) {
+        switch (tipoTela) {
+          case 'pergunta':
+            return 'question';
+          case 'desafio':
+            return 'challenge';
+          case 'decisao':
+            return 'decision';
+          default:
+            return 'question';
         }
-        const opcoes = cartasEtapa[tipo];
-        const sorteada = opcoes[Math.floor(Math.random() * opcoes.length)];
-        cardOutput.textContent = sorteada;
+      }
+
+      function closeModal() {
+        modal.style.display = 'none';
       }
 
       function respostaErrada() {
