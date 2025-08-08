@@ -5,6 +5,11 @@ dotenv.config();
 
 type CardType = 'question' | 'challenge' | 'decision';
 
+export interface GeneratedCard {
+  question: string;
+  answer: string;
+}
+
 export class GenerateCardService {
   private apiUrl: string;
 
@@ -19,7 +24,7 @@ export class GenerateCardService {
     topicContext: string,
     type: CardType,
     context?: string
-  ): Promise<string | undefined> {
+  ): Promise<GeneratedCard | undefined> {
     const prompt = this.buildPrompt(
       discipline,
       disciplineSyllabus,
@@ -35,7 +40,7 @@ export class GenerateCardService {
         {
           model: 'command-r-plus-08-2024',
           prompt,
-          max_tokens: 300,
+          max_tokens: 400,
           temperature: 0.8,
         },
         {
@@ -49,7 +54,18 @@ export class GenerateCardService {
       const text = response.data.generations?.[0]?.text?.trim();
       if (!text) throw new Error('Empty response from Cohere');
 
-      return text;
+      const match = text.match(/Pergunta:\s*(.+?)\nResposta:\s*(.+)/s);
+      if (match) {
+        return {
+          question: match[1].trim(),
+          answer: match[2].trim(),
+        };
+      } else {
+        return {
+          question: text,
+          answer: '',
+        };
+      }
     } catch (err) {
       console.error('Erro ao se comunicar com a Cohere:', err);
       return undefined;
@@ -69,19 +85,22 @@ export class GenerateCardService {
 Disciplina: Engenharia de Software
 Tópico: Arquitetura de Software
 Tipo: Pergunta
-Carta: Qual a principal vantagem de utilizar uma arquitetura hexagonal em aplicações corporativas modernas?
+Pergunta: Qual a principal vantagem de utilizar uma arquitetura hexagonal em aplicações corporativas modernas?
+Resposta: A arquitetura hexagonal facilita a manutenção e evolução do sistema ao separar claramente as regras de negócio das interfaces externas, promovendo flexibilidade e testabilidade.
 --`,
       challenge: `
 Disciplina: Desenvolvimento de Produto
 Tópico: Prototipagem
 Tipo: Desafio
-Carta: Crie um plano de prototipagem rápida para validar a funcionalidade central de um aplicativo de saúde mental voltado a universitários.
+Pergunta: Crie um plano de prototipagem rápida para validar a funcionalidade central de um aplicativo de saúde mental voltado a universitários.
+Resposta: Elabore wireframes das principais telas, realize entrevistas rápidas com estudantes, desenvolva um protótipo de baixa fidelidade e colete feedback em sessões de teste com usuários reais.
 --`,
       decision: `
 Disciplina: Gestão de Projetos
 Tópico: Priorização de Requisitos
 Tipo: Tomada de Decisão
-Carta: Seu time precisa escolher entre desenvolver um recurso muito solicitado por clientes ou resolver uma dívida técnica crítica. Qual opção você prioriza e por quê?
+Pergunta: Seu time precisa escolher entre desenvolver um recurso muito solicitado por clientes ou resolver uma dívida técnica crítica. Qual opção você prioriza e por quê?
+Resposta: Priorize resolver a dívida técnica crítica, pois ela pode comprometer a estabilidade e escalabilidade do produto, impactando negativamente todos os usuários a longo prazo.
 --`,
     };
 
@@ -99,14 +118,15 @@ Aqui está um exemplo do tipo que queremos:
 
 ${examples[type]}
 
-Agora gere apenas UMA carta nova para o seguinte caso:
+Agora gere apenas UMA carta nova para o seguinte caso, seguindo o formato:
+Pergunta: <texto da carta>
+Resposta: <resposta ou solução esperada>
 
 Disciplina: ${discipline}
 Ementa: ${disciplineSyllabus}
 Tópico: ${topic}
 Contexto: ${topicContext}
 Tipo: ${this.capitalizeType(type)}
-Carta:
 `;
   }
 
