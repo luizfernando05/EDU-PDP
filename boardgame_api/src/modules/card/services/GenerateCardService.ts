@@ -14,11 +14,20 @@ export class GenerateCardService {
 
   async generateCard(
     discipline: string,
+    disciplineSyllabus: string,
     topic: string,
+    topicContext: string,
     type: CardType,
     context?: string
   ): Promise<string | undefined> {
-    const prompt = this.buildPrompt(discipline, topic, type, context);
+    const prompt = this.buildPrompt(
+      discipline,
+      disciplineSyllabus,
+      topic,
+      type,
+      topicContext,
+      context
+    );
 
     try {
       const response = await axios.post(
@@ -49,8 +58,10 @@ export class GenerateCardService {
 
   private buildPrompt(
     discipline: string,
+    disciplineSyllabus: string,
     topic: string,
     type: CardType,
+    topicContext: string,
     context?: string
   ): string {
     const examples = {
@@ -91,7 +102,9 @@ ${examples[type]}
 Agora gere apenas UMA carta nova para o seguinte caso:
 
 Disciplina: ${discipline}
+Ementa: ${disciplineSyllabus}
 Tópico: ${topic}
+Contexto: ${topicContext}
 Tipo: ${this.capitalizeType(type)}
 Carta:
 `;

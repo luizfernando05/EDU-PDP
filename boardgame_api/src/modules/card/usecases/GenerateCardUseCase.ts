@@ -4,10 +4,19 @@ import { GenerateCardService } from '../services/GenerateCardService';
 export class GenerateCardUseCase {
   constructor(private generateCardService: GenerateCardService) {}
 
-  async execute({ discipline, topic, context, type }: IRequest) {
+  async execute({
+    discipline,
+    disciplineSyllabus,
+    topic,
+    topicContext,
+    context,
+    type,
+  }: IRequest) {
     const cardContent = await this.generateCardService.generateCard(
       discipline,
+      disciplineSyllabus,
       topic,
+      topicContext,
       type,
       context
     );

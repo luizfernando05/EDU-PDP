@@ -5,7 +5,14 @@ import { GenerateCardUseCase } from '../usecases/GenerateCardUseCase';
 export class GenerateCardController {
   async handle(req: Request, res: Response): Promise<Response> {
     try {
-      const { discipline, topic, context, type } = req.body;
+      const {
+        discipline,
+        topic,
+        context,
+        type,
+        topicContext,
+        disciplineSyllabus,
+      } = req.body;
 
       if (!discipline || !topic || !type) {
         return res.status(400).json({ error: 'Missing required fields' });
@@ -19,6 +26,8 @@ export class GenerateCardController {
         topic,
         context,
         type,
+        disciplineSyllabus,
+        topicContext,
       });
 
       return res.json(result);
