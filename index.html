@@ -152,6 +152,32 @@
           'Contexto para Pós desenvolvimento',
       };
 
+      const consequences = [
+        { correct: 'Avance 2 casas', wrong: 'Fique 1 rodada sem jogar' },
+        { correct: 'Jogue novamente', wrong: 'Volte 1 casa' },
+        { correct: 'Avance 3 casas', wrong: 'Perde a próxima vez de jogar' },
+        { correct: 'Ganhe uma carta bônus', wrong: 'Passe a vez' },
+        { correct: 'Troque de lugar com outro jogador', wrong: 'Fique parado' },
+      ];
+
+      const cartaConsequencias = [
+        'O escopo do projeto não foi bem definido. ➡️ Volte 2 casas',
+        'Você ignorou os riscos potenciais do projeto. ➡️ Fique 1 rodada sem jogar',
+        'Sua equipe ultrapassou o orçamento planejado. ➡️ Volte 3 casas',
+        'Você implementou um bom plano de mitigação de riscos. ➡️ Avance 2 casas',
+        'O time não seguiu o cronograma de atividades. ➡️ Volte 2 casas',
+        'Você aplicou indicadores de desempenho corretamente. ➡️ Avance 1 casa',
+        'O projeto foi entregue antes do prazo. ➡️ Avance 2 casas',
+        'O Escritório de Projetos não foi consultado. ➡️ Perca a próxima rodada',
+        'Você fez uma análise financeira durante todo o projeto. ➡️ Avance 2 casas',
+        'Seu projeto teve qualidade abaixo das especificações. ➡️ Volte 1 casa',
+      ];
+
+      function getRandomConsequence() {
+        const randomIndex = Math.floor(Math.random() * consequences.length);
+        return consequences[randomIndex];
+      }
+
       etapas.forEach((etapa) => {
         const div = document.createElement('div');
         div.className = 'stage';
@@ -171,6 +197,14 @@
 
       async function showCard(tipo) {
         cardOutput.textContent = 'Buscando carta...';
+
+        if (tipo === 'consequencia') {
+          const randomIndex = Math.floor(
+            Math.random() * cartaConsequencias.length
+          );
+          cardOutput.textContent = `⚠️ ${cartaConsequencias[randomIndex]}`;
+          return;
+        }
 
         try {
           const response = await fetch('http://localhost:3000/generate-card', {
@@ -192,8 +226,11 @@
 
           if (data.card) {
             if (data.card.question && data.card.answer) {
+              const consequence = getRandomConsequence();
               cardOutput.innerHTML = `
-              ${data.card.question}
+              ${data.card.question}<br>
+              <p>✅ ${consequence.correct}
+              <br>❌ ${consequence.wrong}</p>
             `;
             } else {
               cardOutput.textContent = data.card;
